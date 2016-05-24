@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Chart2</h1>
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "theme1",
+                title:{
+                    text: "{{chart2Info.chartTitle}}"
+                },
+                data: {{chart2Info.json | safe}}
+            });
+            chart.render();
+
+            function onClick(e){
+                alert("dataPoint { x:" + e.data.x + ", y: "+ e.data.y + " }" );
+            }
+        }
+    </script>
+    <div id="chartContainer" style="height: 300px; width: 100%; padding-top: 20px"></div>
+{% endblock %}
