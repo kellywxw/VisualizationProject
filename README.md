@@ -1,1 +1,1 @@
-"# FlaskCanvasJSVisualization" 
+"# Visualization Project"
